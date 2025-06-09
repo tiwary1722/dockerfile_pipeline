@@ -1,0 +1,14 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+    echo "Building Docker image..."
+    docker build -t my-simple-image .
+
+    echo "Running Docker container..."
+    docker run my-simple-image
+  displayName: 'Build and Run Docker Image'
